@@ -1,7 +1,7 @@
 # asyncode
-<!-- [![PyPI](https://img.shields.io/pypi/v/asyncode)](https://pypi.org/project/asyncode)
+[![PyPI](https://img.shields.io/pypi/v/asyncode)](https://pypi.org/project/asyncode)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/asyncode)](https://pypi.org/project/asyncode)
-[![PyPI - Wheel](https://img.shields.io/pypi/wheel/asyncode)](https://pypi.org/project/asyncode) -->
+[![PyPI - Wheel](https://img.shields.io/pypi/wheel/asyncode)](https://pypi.org/project/asyncode)
 [![Read the Docs](https://img.shields.io/readthedocs/asyncode)](https://asyncode.readthedocs.io)
 
 Python package for emulating Python's interactive interpreter in asynchronous contexts.
