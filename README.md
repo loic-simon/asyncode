@@ -17,7 +17,7 @@ pip install asyncode
 
 ### Dependencies
 
-* Python 3.5+
+* Python **>= 3.5** *(no CI for Python < 3.8)*
 
 
 
