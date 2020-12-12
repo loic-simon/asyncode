@@ -54,9 +54,9 @@ Several issues prevent directly using Python's :mod:`code` standard module :
   to await coroutines inside the interpreter (declare a asynchronous
   function and use :func:`asyncio.get_running_loop`);
 
-- information printed by functions and by :func:`repr` (writing only an
+- information printed by :func:`print`, :func:`repr`... (like when sending an
   object name) to :data:`sys.stdout` and :data:`sys.stderr` would be lost, as
-  an we need an asynchronous function to send content to the interpreter.
+  we need an asynchronous function to send content to the interpreter.
 
 
 Implementation
@@ -67,21 +67,22 @@ This module provides two classes, :class:`AsyncInteractiveInterpreter` and
 :class:`code.InteractiveInterpreter` and :class:`code.InteractiveConsole`,
 except that:
 
-- :meth:`~AsyncInteractiveInterpreter.write``,
-  :meth:`~AsyncInteractiveConsole.raw_input`` and other higher-level methods
+- :meth:`~AsyncInteractiveInterpreter.write`,
+  :meth:`~AsyncInteractiveConsole.raw_input` and other higher-level methods
   are asynchronous (they return coroutines, that have to be awaited).
 
     .. warning::
     	Only text input/output is asnychronous: in particular, **code executed
         in the interpreter will still be blocking**.
 
-        For example, sending ``time.sleep(10)`` in a running ``AsyncInteractiveConsole`` will block
-        every other concurrent tasks for 10 seconds.
+        For example, sending ``time.sleep(10)`` in a running
+        ``AsyncInteractiveConsole`` will block every other concurrent task for
+        10 seconds.
 
 - the compiler allows top-level ``await`` statements;
 
 - instead of being directly executed, compiled code is wrapped in a function
-  object (:class:`types.FunctionType`) which is called (): if the result is a
+  object (:class:`types.FunctionType`) which is called: if the result is a
   coroutine, it is then awaited; otherwise, this is strictly identical to
   direct code execution.
 
