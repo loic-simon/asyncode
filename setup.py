@@ -1,6 +1,6 @@
 import setuptools
 
-version = "0.1.0"
+version = "1.0.0"
 
 with open("README.md", "r", encoding="utf-8") as fh:
     readme = fh.read()
@@ -16,7 +16,7 @@ setuptools.setup(
     url="https://github.com/loic-simon/asyncode",
     py_modules=["asyncode"],
     classifiers=[
-        "Development Status :: 4 - Beta",
+        "Development Status :: 5 - Production/Stable",
         "Framework :: AsyncIO",
         "Intended Audience :: Developers",
         "Programming Language :: Python :: 3.5",
